@@ -181,6 +181,11 @@ const Predict = ({ navigation }) => {
           <Image source={require('../assets/history.png')} style={styles.clearImage} />
         </TouchableOpacity>
       )}
+      {image?.length == 0 && (
+        <TouchableOpacity onPress={() => navigation.navigate('Contactus')} style={styles.contactStyle}>
+          <Image source={require('../assets/center.png')} style={styles.clearImage} />
+        </TouchableOpacity>
+      )}
       {image?.length > 0 && (
         <TouchableOpacity onPress={clearOutput} style={styles.clearStyle}>
           <Image source={require('../assets/clean.png')} style={styles.clearImage} />
@@ -295,6 +300,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 100,
     right: 30,
+    tintColor: '#FFF',
+    zIndex: 10,
+  },
+  contactStyle: {
+    position: 'absolute',
+    top: 100,
+    left: 30,
     tintColor: '#FFF',
     zIndex: 10,
   },
