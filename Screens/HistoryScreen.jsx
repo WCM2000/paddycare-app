@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, FlatList, StyleSheet, TouchableOpacity, ImageBackground, Dimensions, Button } from 'react-native';
+import { View, Text, Image, FlatList, StyleSheet, TouchableOpacity, ImageBackground, Dimensions, Button, ActivityIndicator } from 'react-native';
 
 export const { height, width } = Dimensions.get('window');
 
@@ -9,15 +9,18 @@ const URL = process.env.HOST_URL;
 const HistoryScreen = () => {
     const [data, setData] = useState([]);
     const [selectedItem, setSelectedItem] = useState(null);
+    const [loading, setLoading] = useState(true); // New state for loading
 
     useEffect(() => {
         fetch(URL + '/predictions')
             .then(response => response.json())
             .then(jsonData => {
                 setData(jsonData);
+                setLoading(false); // Set loading to false when data is fetched
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
+                setLoading(false); // Set loading to false in case of error
             });
     }, []);
 
@@ -66,11 +69,15 @@ const HistoryScreen = () => {
             style={styles.background}
         >
             <View style={styles.container}>
-                <FlatList
-                    data={data}
-                    renderItem={renderItem}
-                    keyExtractor={(item) => item._id}
-                />
+                {loading ? ( // Show loading spinner if loading is true
+                    <ActivityIndicator size="large" color="#0000ff" />
+                ) : (
+                    <FlatList
+                        data={data}
+                        renderItem={renderItem}
+                        keyExtractor={(item) => item._id}
+                    />
+                )}
 
                 {selectedItem && (
                     <View style={styles.cardView}>
