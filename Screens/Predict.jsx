@@ -255,11 +255,14 @@ const styles = StyleSheet.create({
   title: {
     alignSelf: 'center',
     position: 'absolute',
-    top: (isIOS && 35) || 10,
-    fontSize: 30,
-    ...fonts.Bold,
-    color: '#FFF',
+    top: Platform.OS === 'ios' ? 35 : 10,
+    fontSize: 35,
+    fontWeight: '800',
+    color: '#FFFFFF',
+    textShadowColor: 'black',
+    textShadowOffset: { width: 5, height: 5 },
   },
+
   clearImage: { height: 40, width: 40, tintColor: '#FFF' },
   mainOuter: {
     flexDirection: 'row',
