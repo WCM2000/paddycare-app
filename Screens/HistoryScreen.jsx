@@ -70,7 +70,7 @@ const HistoryScreen = () => {
         >
             <View style={styles.container}>
                 {loading ? ( // Show loading spinner if loading is true
-                    <ActivityIndicator size="large" color="#0000ff" />
+                    <ActivityIndicator size="large" color="#0B920D" />
                 ) : (
                     <FlatList
                         data={data}
