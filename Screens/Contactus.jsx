@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Alert, StyleSheet, ImageBackground, } from 'react-native';
+import { View, Text, TextInput, Button, Alert, StyleSheet, ImageBackground, Image } from 'react-native';
 
 const ContactUsScreen = () => {
     const [name, setName] = useState('');
@@ -32,6 +32,12 @@ const ContactUsScreen = () => {
             style={styles.background}
         >
             <View style={styles.container}>
+                <View style={styles.logoContainer}>
+                    <Image
+                        source={require('../assets/logo.png')}
+                        style={styles.logo}
+                    />
+                </View>
                 <TextInput
                     style={styles.input}
                     placeholder="Name"
@@ -60,7 +66,7 @@ const ContactUsScreen = () => {
                     <Text style={styles.contactTitle}>Contact Us:</Text>
                     <Text>Email: paddycaresentinal@proton.com</Text>
                     <Text>Phone: +94112345876</Text>
-                    <Text>Address: 200/3,Pitipna North,Homagama</Text>
+                    <Text>Address: 200/3,Pitipna North,Homagama.</Text>
                 </View>
             </View>
         </ImageBackground>
@@ -77,6 +83,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingHorizontal: 20,
     },
+    logoContainer: {
+        alignItems: 'center',
+        marginTop: 0,
+    },
+    logo: {
+        width: 300,
+        height: 150,
+        resizeMode: 'contain',
+    },
     input: {
         height: 40,
         borderColor: 'black',
@@ -84,14 +99,33 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         paddingHorizontal: 10,
         marginBottom: 10,
+
+        backgroundColor: '#fff',
+        borderRadius: 10,
+        padding: 6,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+
     },
     messageInput: {
         height: 120,
+
+        backgroundColor: '#fff',
+        borderRadius: 10,
+        padding: 16,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
     },
     contactDetails: {
         marginTop: 20,
 
-        backgroundColor: '#fff',
+        backgroundColor: '#BAFE5C',
         borderRadius: 10,
         padding: 16,
         shadowColor: '#000',
