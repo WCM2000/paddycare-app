@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     cardText: {
-        fontSize: 14,
+        fontSize: 16,
         marginBottom: 4,
         color: '#000000'
     },
