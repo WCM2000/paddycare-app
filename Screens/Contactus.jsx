@@ -12,11 +12,9 @@ const ContactUsScreen = () => {
             return;
         }
 
-
         console.log('Name:', name);
         console.log('Email:', email);
         console.log('Message:', message);
-
 
         setName('');
         setEmail('');
@@ -59,7 +57,11 @@ const ContactUsScreen = () => {
                     multiline
                     numberOfLines={4}
                 />
-                <Button title="Submit" onPress={handleSubmit} />
+                <Button
+                    title="Submit"
+                    onPress={handleSubmit}
+                    color="#2CAC00"
+                />
 
                 {/* Contact Details */}
                 <View style={styles.contactDetails}>
@@ -94,7 +96,7 @@ const styles = StyleSheet.create({
     },
     input: {
         height: 40,
-        borderColor: 'black',
+        borderColor: '#000000',
         borderWidth: 1,
         borderRadius: 5,
         paddingHorizontal: 10,
@@ -103,12 +105,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderRadius: 10,
         padding: 6,
-        shadowColor: '#000',
+        shadowColor: '#000000',
         shadowOffset: {
             width: 0,
             height: 2,
         },
-
     },
     messageInput: {
         height: 120,
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderRadius: 10,
         padding: 16,
-        shadowColor: '#000',
+        shadowColor: '#000000',
         shadowOffset: {
             width: 0,
             height: 2,
@@ -128,7 +129,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#BAFE5C',
         borderRadius: 10,
         padding: 16,
-        shadowColor: '#000',
+        shadowColor: '#000000',
         shadowOffset: {
             width: 0,
             height: 2,
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     blackColor: {
-        color: 'black',
+        color: '#000000',
     },
     largeText: {
         fontSize: 16,

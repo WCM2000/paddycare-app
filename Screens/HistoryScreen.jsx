@@ -69,7 +69,7 @@ const HistoryScreen = () => {
             style={styles.background}
         >
             <View style={styles.container}>
-                {loading ? ( // Show loading spinner if loading is true
+                {loading ? (
                     <ActivityIndicator size="large" color="#0B920D" />
                 ) : (
                     <FlatList
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderRadius: 10,
         padding: 16,
-        shadowColor: '#000',
+        shadowColor: '##000000',
         shadowOffset: {
             width: 0,
             height: 2,
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     cardText: {
         fontSize: 14,
         marginBottom: 4,
-        color: 'black'
+        color: '#000000'
     },
 });
 
