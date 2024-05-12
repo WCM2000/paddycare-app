@@ -175,7 +175,7 @@ const Predict = ({ navigation }) => {
         source={require('../assets/background.jpeg')}
         style={{ height: height, width: width }}
       />
-      <Text style={styles.title}>{'Paddy Care Sentinal'}</Text>
+      <Text style={StyleSheet.compose(styles.title, styles.highlightText)}>  Paddy Care Sentinal  </Text>
       {image?.length == 0 && (
         <TouchableOpacity onPress={() => navigation.navigate('History')} style={styles.clearStyle}>
           <Image source={require('../assets/history.png')} style={styles.clearImage} />
@@ -261,6 +261,12 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     textShadowColor: 'black',
     textShadowOffset: { width: 5, height: 5 },
+  },
+  highlightText: {
+    backgroundColor: '#31B806',
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
   },
 
   clearImage: { height: 40, width: 40, tintColor: '#FFF' },
