@@ -12,9 +12,11 @@ const ContactUsScreen = () => {
             return;
         }
 
+
         console.log('Name:', name);
         console.log('Email:', email);
         console.log('Message:', message);
+
 
         setName('');
         setEmail('');
@@ -39,12 +41,14 @@ const ContactUsScreen = () => {
                 <TextInput
                     style={styles.input}
                     placeholder="Name"
+                    placeholderTextColor="gray"
                     value={name}
                     onChangeText={text => setName(text)}
                 />
                 <TextInput
                     style={styles.input}
                     placeholder="Email"
+                    placeholderTextColor="gray"
                     value={email}
                     onChangeText={text => setEmail(text)}
                     keyboardType="email-address"
@@ -52,6 +56,7 @@ const ContactUsScreen = () => {
                 <TextInput
                     style={[styles.input, styles.messageInput]}
                     placeholder="Message"
+                    placeholderTextColor="gray"
                     value={message}
                     onChangeText={text => setMessage(text)}
                     multiline
@@ -63,12 +68,12 @@ const ContactUsScreen = () => {
                     color="#2CAC00"
                 />
 
-                {/* Contact Details */}
+
                 <View style={styles.contactDetails}>
                     <Text style={styles.contactTitle}>Contact Us:</Text>
-                    <Text>Email: paddycaresentinal@proton.com</Text>
-                    <Text>Phone: +94112345876</Text>
-                    <Text>Address: 200/3,Pitipna North,Homagama.</Text>
+                    <Text style={styles.contactText}>Email: paddycaresentinal@proton.com</Text>
+                    <Text style={styles.contactText}>Phone: +94112345876</Text>
+                    <Text style={styles.contactText}>Address: 200/3,Pitipna North,Homagama.</Text>
                 </View>
             </View>
         </ImageBackground>
@@ -96,40 +101,37 @@ const styles = StyleSheet.create({
     },
     input: {
         height: 40,
-        borderColor: '#000000',
+        borderColor: 'black',
+        backgroundColor: '#fff',
         borderWidth: 1,
         borderRadius: 5,
         paddingHorizontal: 10,
         marginBottom: 10,
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#000000',
 
-        backgroundColor: '#fff',
-        borderRadius: 10,
-        padding: 6,
-        shadowColor: '#000000',
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
+
     },
     messageInput: {
         height: 120,
 
+        borderColor: 'black',
         backgroundColor: '#fff',
-        borderRadius: 10,
-        padding: 16,
-        shadowColor: '#000000',
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
+        borderWidth: 1,
+        borderRadius: 5,
+        paddingHorizontal: 10,
+        marginBottom: 10,
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#000000',
     },
     contactDetails: {
         marginTop: 20,
-
         backgroundColor: '#BAFE5C',
         borderRadius: 10,
         padding: 16,
-        shadowColor: '#000000',
+        shadowColor: '#000',
         shadowOffset: {
             width: 0,
             height: 2,
@@ -139,12 +141,20 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     contactTitle: {
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: 'bold',
         marginBottom: 10,
+        color: '#000000',
+    },
+    contactText: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginBottom: 10,
+        color: '#000000',
+
     },
     blackColor: {
-        color: '#000000',
+        color: 'black',
     },
     largeText: {
         fontSize: 16,

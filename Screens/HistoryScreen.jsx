@@ -125,10 +125,12 @@ const styles = StyleSheet.create({
     filename: {
         fontWeight: 'bold',
         fontSize: 16,
+        color: '#000000',
     },
     predictedClass: {
         marginTop: 4,
         fontSize: 14,
+        color: '#000000',
     },
     confidence: {
         marginTop: 4,
@@ -168,6 +170,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         marginBottom: 8,
+        color: '#000000',
     },
     imageContainer: {
         alignItems: 'center',
