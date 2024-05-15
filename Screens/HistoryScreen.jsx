@@ -23,7 +23,7 @@ const HistoryScreen = () => {
                 setLoading(false); // Set loading to false in case of error
             });
     }, []);
-
+    //delet data in database
     const deleteDocument = async (documentId) => {
         try {
             const response = await fetch(URL + `/delete/${documentId}`, {
@@ -43,7 +43,7 @@ const HistoryScreen = () => {
     const selectItem = (item) => {
         setSelectedItem(item);
     };
-
+    //showing the result and delete button in the history screen
     const renderItem = ({ item }) => (
         <TouchableOpacity onPress={() => selectItem(item)} style={styles.itemContainer}>
             <Image source={{ uri: item.file_url }} style={styles.image} />
@@ -61,7 +61,7 @@ const HistoryScreen = () => {
     const closeCardView = () => {
         setSelectedItem(null);
     };
-
+    //card view result and close button
     return (
         <ImageBackground
             blurRadius={10}
@@ -95,7 +95,7 @@ const HistoryScreen = () => {
         </ImageBackground>
     );
 };
-
+//styles
 const styles = StyleSheet.create({
     container: {
         flex: 1,

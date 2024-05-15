@@ -22,7 +22,7 @@ import PermissionsService, { isIOS } from '../Permissions';
 // const URL = process.env.DEV_URL;
 const URL = process.env.HOST_URL;
 
-
+// Adding Authentication token
 axios.interceptors.request.use(
   async config => {
     let request = config;
@@ -61,7 +61,7 @@ const options = {
   height: 256,
   includeBase64: true,
 };
-
+//component sets up state variables for storing prediction results..
 const Predict = ({ navigation }) => {
   const [result, setResult] = useState('');
   const [label, setLabel] = useState('');
@@ -71,7 +71,7 @@ const Predict = ({ navigation }) => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-
+  //Sending prediction request to the server and handeling response
   const getPredication = async params => {
     return new Promise((resolve, reject) => {
       var bodyFormData = new FormData();
@@ -89,7 +89,7 @@ const Predict = ({ navigation }) => {
         });
     });
   };
-
+  //Managing Camera related action base on specific type
   const manageCamera = async type => {
     try {
       //   if (!(await PermissionsService.hasCameraPermission())) {
@@ -105,7 +105,7 @@ const Predict = ({ navigation }) => {
       console.log(err);
     }
   };
-
+  //Open device camera and capturing
   const openCamera = async () => {
     launchCamera(options, async response => {
       if (response.didCancel) {
@@ -126,7 +126,7 @@ const Predict = ({ navigation }) => {
     setResult('');
     setImage('');
   };
-
+  //Processing captured image and updating the state 
   const getResult = async (path, response) => {
     setImage(path);
     setLabel('Predicting...');
@@ -137,7 +137,7 @@ const Predict = ({ navigation }) => {
       name: response.assets[0].fileName,
       type: response.assets[0].type,
     };
-
+    //Prediction result updates the UI and Success or Fail message
     const res = await getPredication(params);
     console.log(res.data)
     if (res?.data?.predicted_class) {
@@ -148,7 +148,7 @@ const Predict = ({ navigation }) => {
       setLabel('Failed to predict');
     }
   };
-
+  //Open phto gallery and select the photo
   const openLibrary = async () => {
     launchImageLibrary(options, async response => {
       if (response.didCancel) {
@@ -164,7 +164,7 @@ const Predict = ({ navigation }) => {
       }
     });
   };
-
+  //style and background Image and Buttons (History, Contact,Camera, photo )
   return (
     <View style={[
       backgroundStyle,
@@ -191,7 +191,6 @@ const Predict = ({ navigation }) => {
           <Image source={require('../assets/clean.png')} style={styles.clearImage} />
         </TouchableOpacity>
       )}
-
       {(image?.length && (
         <Image source={{ uri: image }} style={styles.imageStyle} />
       )) ||
@@ -249,7 +248,7 @@ const Predict = ({ navigation }) => {
       )}
     </View >
   );
-
+  //styles and changes
 }
 const styles = StyleSheet.create({
   title: {

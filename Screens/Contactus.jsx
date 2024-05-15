@@ -12,7 +12,7 @@ const ContactUsScreen = () => {
             return;
         }
 
-
+        //User filling data section you want contact us
         console.log('Name:', name);
         console.log('Email:', email);
         console.log('Message:', message);
@@ -24,7 +24,7 @@ const ContactUsScreen = () => {
 
         Alert.alert('Success', 'Your message has been sent!');
     };
-
+    //Fill section and Contact US details
     return (
         <ImageBackground
             blurRadius={10}
@@ -79,7 +79,7 @@ const ContactUsScreen = () => {
         </ImageBackground>
     );
 };
-
+//styles
 const styles = StyleSheet.create({
     background: {
         flex: 1,
